@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeonConvert - File Converter</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <nav class="neon-nav">
+        <div class="logo">NEON<span>CONVERT</span></div>
+    </nav>
+
+    <main>
+        <div class="drag-drop-zone" id="dropZone">
+            <input type="file" id="fileInput">
+            <div class="tool-icon">📁</div>
+            <p class="upload-text">DRAG & DROP FILES HERE</p>
+            <button class="neon-btn" id="browseBtn">CHOOSE FILE</button>
+            <div class="selected-file" id="fileName"></div>
+            <div id="selectedToolDisplay" class="selected-tool"></div>
+        </div>
+
+        <div class="file-preview" id="filePreview">
+            <div id="previewContent"></div>
+            <div class="button-group">
+                <button class="neon-btn" id="previewBtn">PREVIEW</button>
+                <button class="neon-btn" id="convertBtn">CONVERT</button>
+            </div>
+            <div class="conversion-progress">
+                <div class="progress-bar" id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="tools-grid">
+            <div class="tool-card" data-tool="image-pdf" data-output="PDF">
+                <div class="tool-icon">🖼️</div>
+                <h3>IMAGE TO PDF</h3>
+                <p class="tool-output">Output: PDF</p>
+            </div>
+            <div class="tool-card" data-tool="pdf-image" data-output="PNG">
+                <div class="tool-icon">📄</div>
+                <h3>PDF TO IMAGE</h3>
+                <p class="tool-output">Output: PNG</p>
+            </div>
+            <div class="tool-card" data-tool="doc-pdf" data-output="PDF">
+                <div class="tool-icon">📝</div>
+                <h3>DOC TO PDF</h3>
+                <p class="tool-output">Output: PDF</p>
+            </div>
+            <div class="tool-card" data-tool="image-converter" data-output="JPG/PNG">
+                <div class="tool-icon">🔄</div>
+                <h3>IMAGE CONVERTER</h3>
+                <p class="tool-output">Output: JPG/PNG</p>
+            </div>
+        </div>
+
+        <a class="download-btn" id="downloadLink">DOWNLOAD CONVERTED FILE</a>
+
+        <div class="modal" id="previewModal">
+            <div class="modal-content">
+                <span class="close-modal" onclick="closePreview()">✖</span>
+                <h2>FILE PREVIEW</h2>
+                <div id="modalPreview"></div>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>

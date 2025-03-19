@@ -1,0 +1,215 @@
+:root {
+    --neon-blue: #00f3ff;
+    --neon-pink: #ff00ff;
+    --neon-green: #00ff88;
+    --bg-dark: #0a0a0f;
+    --bg-light: #1a1a2f;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial Black', sans-serif;
+}
+
+body {
+    background-color: var(--bg-dark);
+    color: white;
+    min-height: 100vh;
+}
+
+.neon-nav {
+    background: var(--bg-light);
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid var(--neon-blue);
+    box-shadow: 0 0 15px var(--neon-blue);
+}
+
+.logo {
+    font-size: 2.5rem;
+    font-weight: 900;
+    text-shadow: 0 0 10px var(--neon-blue);
+}
+
+.logo span {
+    color: var(--neon-pink);
+    text-shadow: 0 0 10px var(--neon-pink);
+}
+
+.drag-drop-zone {
+    border: 3px dashed var(--neon-pink);
+    border-radius: 15px;
+    padding: 40px;
+    text-align: center;
+    margin: 50px auto;
+    width: 80%;
+    max-width: 800px;
+    transition: all 0.3s;
+}
+
+.drag-drop-zone:hover {
+    border-color: var(--neon-blue);
+    box-shadow: 0 0 20px var(--neon-pink);
+}
+
+.upload-text {
+    font-size: 1.5rem;
+    margin: 20px 0;
+}
+
+.neon-btn {
+    background: none;
+    border: 2px solid var(--neon-blue);
+    color: var(--neon-blue);
+    padding: 15px 30px;
+    border-radius: 25px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 900;
+    font-size: 1.2rem;
+    margin-top: 20px;
+}
+
+.neon-btn:hover {
+    background: var(--neon-blue);
+    color: var(--bg-dark);
+    box-shadow: 0 0 25px var(--neon-blue);
+}
+
+.tools-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 25px;
+    padding: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.tool-card {
+    background: var(--bg-light);
+    padding: 25px;
+    border-radius: 15px;
+    border: 1px solid transparent;
+    transition: all 0.3s;
+    cursor: pointer;
+    text-align: center;
+}
+
+.tool-card.active {
+    border-color: var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.tool-card:hover {
+    border-color: var(--neon-pink);
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--neon-pink);
+}
+
+.file-preview {
+    display: none;
+    margin: 20px auto;
+    padding: 15px;
+    background: var(--bg-light);
+    border-radius: 10px;
+    max-width: 500px;
+    text-align: center;
+}
+
+.conversion-progress {
+    width: 100%;
+    height: 10px;
+    background: var(--bg-dark);
+    border-radius: 5px;
+    margin: 20px 0;
+    overflow: hidden;
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background: linear-gradient(90deg, var(--neon-pink), var(--neon-blue));
+    transition: width 0.3s;
+}
+
+.preview-image {
+    max-width: 100%;
+    max-height: 300px;
+    border-radius: 10px;
+    margin: 15px 0;
+    border: 2px solid var(--neon-blue);
+}
+
+.download-btn {
+    display: none;
+    background: var(--neon-green);
+    color: var(--bg-dark);
+    padding: 15px 30px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 900;
+    margin: 20px auto;
+    cursor: pointer;
+}
+
+#fileInput {
+    display: none;
+}
+
+.selected-file {
+    color: var(--neon-green);
+    margin: 15px 0;
+    font-weight: bold;
+}
+
+.button-group {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.8);
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal-content {
+    background: var(--bg-light);
+    padding: 20px;
+    border-radius: 10px;
+    max-width: 90%;
+    max-height: 90%;
+    overflow: auto;
+    position: relative;
+}
+
+.close-modal {
+    float: right;
+    cursor: pointer;
+    font-size: 24px;
+}
+
+.selected-tool {
+    color: var(--neon-green);
+    margin: 15px 0;
+    font-size: 1.2rem;
+}
+
+.tool-output {
+    color: var(--neon-pink);
+    font-size: 0.9rem;
+    margin-top: 10px;
+}
